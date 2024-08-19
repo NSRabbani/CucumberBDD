@@ -1,0 +1,111 @@
+package pom;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class AdminPage {
+
+	static WebDriver driver;
+	
+	public WebElement getTextDashboard() {
+		return textDashboard;
+	}
+
+	public WebElement adminButton() {
+		return adminButtonElement;
+	}
+	
+	public WebElement getAdminButtonElement() {
+		return adminButtonElement;
+	}
+
+	public WebElement addUserButton() {
+		return addUserButton;
+	}
+
+	public WebElement userRoleDropdown() {
+		return userRoleDropdown;
+	}
+
+	public WebElement statusDropDown() {
+		return statusDropDown;
+	}
+
+	public WebElement opionAdmin() {
+		return opionAdmin;
+	}
+
+	public WebElement optionEnabled() {
+		return optionEnabled;
+	}
+
+	public WebElement employeeName() {
+		return employeeName;
+	}
+
+	public WebElement employeeNameSuggession() {
+		return employeeNameSuggession;
+	}
+
+	public WebElement userName() {
+		return userName;
+	}
+
+	public WebElement password() {
+		return password;
+	}
+
+	public WebElement confirmPassword() {
+		return confirmPassword;
+	}
+
+	public WebElement saveButton() {
+		return saveButton;
+	}
+	
+	@FindBy(xpath = "//h6[text()='Dashboard']")
+	private WebElement textDashboard;
+	
+	@FindBy(xpath = "//span[text()='Admin']")
+	private WebElement adminButtonElement;
+
+	@FindBy(xpath = "//*[text()=' Add ']")
+	private WebElement addUserButton;
+	
+	@FindBy(xpath = "//label[text()='User Role']/../../..//div[text()='-- Select --']")
+	private WebElement userRoleDropdown;
+	
+	@FindBy(xpath = "//label[text()='Status']/../../..//div[text()='-- Select --']")
+	private WebElement statusDropDown;
+	
+	@FindBy(xpath = "(//span[text()='Admin'])[2]/..")
+	private WebElement opionAdmin;
+	
+	@FindBy(xpath = "//span[text()='Enabled']")
+	private WebElement optionEnabled;
+	
+	@FindBy(xpath = "//input[@placeholder='Type for hints...']")
+	private WebElement employeeName;
+	
+	@FindBy(xpath = "//span[text()='Orange  Test']")
+	private WebElement employeeNameSuggession;
+	
+	@FindBy(xpath = "//label[text()='Username']/../../..//input")
+	private WebElement userName;
+	
+	@FindBy(xpath = "//label[text()='Password']/../../..//input")
+	private WebElement password;
+
+	@FindBy(xpath = "//label[text()='Confirm Password']/../../..//input")
+	private WebElement confirmPassword;
+	
+	@FindBy(xpath = "//button[text()=' Save ']")
+	private WebElement saveButton;
+	
+	public AdminPage(WebDriver driver) {
+		PageFactory.initElements(driver, this);
+	}
+
+}

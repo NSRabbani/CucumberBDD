@@ -1,0 +1,50 @@
+package testRunner;
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(features = "E:\\Rabbani\\SDET\\FeatureFiles\\Login.feature", 
+glue = "stepDefinitions", 
+dryRun = false
+//, tags= "@TC01 and @TC02"
+)
+public class Runner{
+	
+	public static WebDriver driver;
+
+	@Before
+	public  void setUp() {
+		System.out.println("start");
+		driver = new ChromeDriver();
+	}
+	
+	@After
+	public  void tearDown() {
+		
+		if (driver != null) {
+			
+			driver.quit();
+	        driver = null;
+			
+			
+		}
+		
+		
+		
+	}
+
+	
+
+}

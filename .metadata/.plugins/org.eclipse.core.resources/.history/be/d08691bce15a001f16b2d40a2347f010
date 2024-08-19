@@ -1,0 +1,9 @@
+Feature: Loin page scenarios
+
+@TC01
+Scenario: Login with valid credentials
+
+Given User on login page
+When User enters valid username and password
+Then User navigates to dashboard page
+

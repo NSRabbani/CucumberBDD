@@ -1,0 +1,20 @@
+Feature: Loin page scenarios
+
+
+Background: 
+Given User on login page
+When User enters valid username and password
+
+@TC01
+Scenario: Login with valid credentials
+
+
+Then User navigates to dashboard page
+
+@TC02
+Scenario: Add and delete admin user
+
+When User add new Admin
+Then User gets added to the list
+And User deletes the new Admin
+Then user gets deleted from list

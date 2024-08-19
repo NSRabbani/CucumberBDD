@@ -1,0 +1,49 @@
+package helpers;
+
+import org.openqa.selenium.WebDriver;
+
+import io.cucumber.core.runner.Runner;
+import pom.AdminPage;
+import pom.LoginPage;
+
+public class PageObjectManager {
+
+	WebDriver driver;
+
+	private LoginPage log;
+	private AdminPage admin;
+
+	public PageObjectManager(WebDriver driver) {
+
+		this.driver = driver;
+
+	}
+
+	public LoginPage getLoginPage() {
+
+		if (log == null) {
+
+			log = new LoginPage(driver);
+		}
+		return log;
+
+	}
+
+	public AdminPage getAdminPage() {
+		if (admin == null) {
+			admin = new AdminPage(driver);
+		}
+		return admin;
+	}
+
+}
+
+//@TC02
+//Scenario: Add and delete admin user
+//Given User on login page
+//When User enters valid username and password
+//Then User navigates to dashboard page
+//When User add new Admin
+//Then User gets added to the list
+//And User deletes the new Admin
+//Then user gets deleted from list
